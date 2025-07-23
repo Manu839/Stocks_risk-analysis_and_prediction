@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: #e5e7eb;
+  background-color: #0f172a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #0f172a;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Responsive chart containers */
+.recharts-responsive-container {
+  min-height: 300px;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  .recharts-responsive-container {
+    min-height: 250px;
+  }
+
+  /* Smaller text on mobile */
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .text-xl {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack cards vertically on tablets */
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Enhanced responsive design for wider layouts */
+@media (min-width: 1280px) {
+  /* Better grid layouts for larger screens */
+  .grid-cols-1.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Optimize chart containers for wider screens */
+  .recharts-responsive-container {
+    min-height: 350px;
+  }
+
+  /* Better grid spacing for larger screens */
+  .grid-cols-1.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid-cols-1.lg\\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1536px) {
+  /* Ultra-wide screen optimizations */
+  .recharts-responsive-container {
+    min-height: 400px;
+  }
+
+  /* Better spacing for ultra-wide screens */
+  .space-y-6 > * + * {
+    margin-top: 2rem;
+  }
+
+  /* Optimize grid layouts for ultra-wide screens */
+  .grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .shadow, .shadow-sm, .shadow-lg {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb;
+  }
+}

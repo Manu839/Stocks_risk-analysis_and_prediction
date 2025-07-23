@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Test - Stocklyzer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9fafb;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 224px; /* w-56 */
+            background: white;
+            border-right: 1px solid #e5e7eb;
+            padding: 1rem;
+        }
+        .main-content {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            overflow-y: auto;
+        }
+        .content-area {
+            max-width: none;
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .screen-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            z-index: 1000;
+        }
+        
+        /* Responsive breakpoints */
+        @media (min-width: 1280px) {
+            .sidebar {
+                width: 240px; /* xl:w-60 */
+            }
+            .main-content {
+                padding: 1.5rem 2rem;
+            }
+            .content-area {
+                max-width: 1536px; /* 2xl:max-w-screen-2xl */
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .sidebar {
+                display: none;
+            }
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .main-content {
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="screen-info" id="screenInfo">
+        Screen: <span id="screenSize"></span>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <div style="margin-top: 1rem;">
+                <div style="padding: 0.5rem; margin-bottom: 0.5rem; background: #eff6ff; border-radius: 4px;">Dashboard</div>
+                <div style="padding: 0.5rem; margin-bottom: 0.5rem;">CAPM Calculator</div>
+                <div style="padding: 0.5rem; margin-bottom: 0.5rem;">Stock Analysis</div>
+                <div style="padding: 0.5rem; margin-bottom: 0.5rem;">Stock Prediction</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="content-area">
+                <h1>Layout Optimization Test</h1>
+                <p>This test page demonstrates the optimized layout with reduced white space and better screen utilization.</p>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Market Coverage</h3>
+                        <p>Global markets with real-time data</p>
+                    </div>
+                    <div class="card">
+                        <h3>Analysis Tools</h3>
+                        <p>Comprehensive technical indicators</p>
+                    </div>
+                    <div class="card">
+                        <h3>Predictions</h3>
+                        <p>ARIMA-based forecasting models</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(to right, #3b82f6, #8b5cf6); color: white; border-radius: 8px;">
+                    <h2>Welcome to Stocklyzer</h2>
+                    <p>Your comprehensive stock analysis and prediction platform with optimized layout for better screen utilization.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function updateScreenInfo() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            let breakpoint = '';
+            
+            if (width >= 1536) breakpoint = '2xl';
+            else if (width >= 1280) breakpoint = 'xl';
+            else if (width >= 1024) breakpoint = 'lg';
+            else if (width >= 768) breakpoint = 'md';
+            else if (width >= 640) breakpoint = 'sm';
+            else breakpoint = 'xs';
+            
+            document.getElementById('screenSize').textContent = `${width}x${height} (${breakpoint})`;
+        }
+        
+        updateScreenInfo();
+        window.addEventListener('resize', updateScreenInfo);
+    </script>
+</body>
+</html>
