@@ -1,10 +1,12 @@
-import './App.css'
+import React from 'react';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100">
+      <Dashboard />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
