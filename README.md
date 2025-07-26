@@ -23,16 +23,15 @@ A full-stack web application for analyzing, evaluating, and forecasting stock pe
 
 ---
 
-## Results 
-
-<img width="1903" height="547" alt="Screenshot 2025-07-26 173013" src="https://github.com/user-attachments/assets/c108a66f-6001-455f-aa24-4a4df33b18d3" />
+## 🎬Results 
 
 <img width="1901" height="865" alt="Screenshot 2025-07-26 172941" src="https://github.com/user-attachments/assets/2722412d-f58c-41aa-ad84-ccbc6a61b2a9" />
 
-<img width="1908" height="682" alt="Screenshot 2025-07-26 173049" src="https://github.com/user-attachments/assets/a731146b-5496-4ff2-a23a-46cac5739cdb" />
+<img width="1903" height="547" alt="Screenshot 2025-07-26 173013" src="https://github.com/user-attachments/assets/c108a66f-6001-455f-aa24-4a4df33b18d3" />
 
 <img width="1902" height="627" alt="Screenshot 2025-07-26 173031" src="https://github.com/user-attachments/assets/d8c66fd6-1095-4457-85f5-ff6178095e38" />
 
+<img width="1908" height="682" alt="Screenshot 2025-07-26 173049" src="https://github.com/user-attachments/assets/a731146b-5496-4ff2-a23a-46cac5739cdb" />
 
 ## 🛠 Tech Stack
 
