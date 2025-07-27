@@ -51,7 +51,7 @@ A full-stack web application for analyzing, evaluating, and forecasting stock pe
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/stock-analysis-app.git
+git clone https://github.com/Manu839/Stocks_risk-analysis_and_prediction.git
 cd stock-analysis-app
 ```
 ### 2. Backend Setup
